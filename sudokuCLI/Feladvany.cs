@@ -17,6 +17,29 @@ namespace sudokuCLI
             Meret = Convert.ToInt32(Math.Sqrt(sor.Length));
         }
 
+        public double Szazalek()
+        {
+            double szazalek = 0;
+            for (int i = 0; i < Meret * Meret; i++)
+            {
+                if (Kezdo[i] != '0')
+                {
+                    szazalek++;
+                }
+            }
+
+            if (szazalek != 0)
+            {
+                szazalek = (szazalek / (Meret * Meret)) * 100;
+            }
+            else
+            {
+                szazalek = 100;
+            }
+
+            return Math.Round(szazalek);
+        }
+
         public void Kirajzol()
         {
             for (int i = 0; i < Kezdo.Length; i++)
